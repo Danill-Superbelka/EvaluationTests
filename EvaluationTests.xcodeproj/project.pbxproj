@@ -16,6 +16,8 @@
 		A5DD06A727244ADD00C421F3 /* AlbumInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06A627244ADC00C421F3 /* AlbumInfoModel.swift */; };
 		A5DD06AD27246B2000C421F3 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06AC27246B1F00C421F3 /* AlbumCell.swift */; };
 		A5DD06AF27246E5700C421F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06AE27246E5700C421F3 /* DetailViewController.swift */; };
+		A5DD06B327249B9B00C421F3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06B227249B9B00C421F3 /* APIService.swift */; };
+		A5DD06B52724A0D700C421F3 /* DecodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06B42724A0D700C421F3 /* DecodingData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A5DD06A627244ADC00C421F3 /* AlbumInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoModel.swift; sourceTree = "<group>"; };
 		A5DD06AC27246B1F00C421F3 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		A5DD06AE27246E5700C421F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A5DD06B227249B9B00C421F3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		A5DD06B42724A0D700C421F3 /* DecodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				A5DD06942722E51800C421F3 /* SceneDelegate.swift */,
 				A5DD06962722E51800C421F3 /* ViewController.swift */,
 				A5DD06A627244ADC00C421F3 /* AlbumInfoModel.swift */,
+				A5DD06B227249B9B00C421F3 /* APIService.swift */,
+				A5DD06B42724A0D700C421F3 /* DecodingData.swift */,
 				A5DD06982722E51800C421F3 /* Main.storyboard */,
 				A5DD06AE27246E5700C421F3 /* DetailViewController.swift */,
 				A5DD06AC27246B1F00C421F3 /* AlbumCell.swift */,
@@ -148,8 +154,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5DD06972722E51800C421F3 /* ViewController.swift in Sources */,
+				A5DD06B327249B9B00C421F3 /* APIService.swift in Sources */,
 				A5DD06A727244ADD00C421F3 /* AlbumInfoModel.swift in Sources */,
 				A5DD06932722E51800C421F3 /* AppDelegate.swift in Sources */,
+				A5DD06B52724A0D700C421F3 /* DecodingData.swift in Sources */,
 				A5DD06AF27246E5700C421F3 /* DetailViewController.swift in Sources */,
 				A5DD06952722E51800C421F3 /* SceneDelegate.swift in Sources */,
 				A5DD06AD27246B2000C421F3 /* AlbumCell.swift in Sources */,

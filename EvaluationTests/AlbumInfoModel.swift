@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct AlbomInfo: Codable {
-    struct Result: Codable {
+struct AlbumInfo: Codable {
+    struct Album: Codable {
         let artistName: String
         let collectionName: String //Название альбома
         let artworkUrl100: String
@@ -18,12 +18,12 @@ struct AlbomInfo: Codable {
 //        let collectionViewURL: String
     }
     let resultCount: Int
-    let results:[Result]
+    let results:[Album]
 }
 
 
 struct AlbomInfoVM {
-    let info: AlbomInfo.Result
+    let info: AlbumInfo.Album
     
     var album: String {
         return info.collectionName
