@@ -11,7 +11,8 @@ struct AlbumInfo: Codable {
     struct Album: Codable {
         let artistName: String
         let collectionName: String //Название альбома
-        let artworkUrl100: String
+        let artworkUrl60: String?
+        let artworkUrl100: String?
         let trackCount: Int
         let releaseDate: String
         
@@ -22,16 +23,4 @@ struct AlbumInfo: Codable {
 }
 
 
-struct AlbomInfoVM {
-    let info: AlbumInfo.Album
-    
-    var album: String {
-        return info.collectionName
-    }
-    
-    var artist: String {
-        return info.artistName
-    }
-    
-   
-}
+
