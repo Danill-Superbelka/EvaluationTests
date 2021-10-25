@@ -7,14 +7,17 @@
 
 import UIKit
 
-class AlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+//MARK: Контроллер отображения Альбома
+
+
+class AlbumViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate{
    
+// Интерфейс storyboard
     @IBOutlet var searchBar: UISearchBar!
-    
     @IBOutlet var collectionView: UICollectionView!
     
-    let reuseIdentifier = "cell"
     
+    let reuseIdentifier = "cell"
     var albums = [AlbumInfo.Album]()
     var timer: Timer?
     
@@ -24,8 +27,6 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.keyboardDismissMode = .onDrag
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
         getAlbum(albumName: album)
     }
     
+// SearchBar configuration
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         let text = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         
@@ -47,7 +49,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
             })
         }
     }
-    
+// Получение информации об альбоме
     func getAlbum(albumName: String){
         print("поиск альбома \(albumName)")
 
@@ -67,7 +69,9 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
        }
    }
     
-    
+
+//MARK: TableView Configuration
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         albums.count
     }
@@ -102,6 +106,7 @@ class AlbumViewController: UIViewController, UICollectionViewDataSource, UIColle
 }
 
 
+//MARK: Настройка ячеек
 
 class AlbumViewCell: UICollectionViewCell {
     

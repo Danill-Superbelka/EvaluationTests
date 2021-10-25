@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: Создание запроса для получения JSON 
+
 class APIService {
     static let shared = APIService()
     

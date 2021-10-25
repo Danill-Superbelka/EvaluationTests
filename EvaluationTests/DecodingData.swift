@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: Декодирование JSON
+
 class DecodingData {
     static let shared = DecodingData()
     

@@ -7,14 +7,14 @@
 
 import UIKit
 
+//MARK: контроллер отображения Истории
+
+
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
     @IBOutlet var historyTableView: UITableView!
     
     var history = [String]()
-    
-    let viewController = ViewController()
-    
     var historyString: String = " "
 
     override func viewDidLoad() {
@@ -29,6 +29,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         historyTableView.reloadData()
     }
     
+    
+//MARK: TableView Configuration
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         history.count
     }
@@ -43,11 +45,6 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         let album = "\(history[indexPath.row])"
         print("Нажата \(album)")
         Search.shared.search = album
-        
-//        let storyboard = UIStoryboard(name: "MainTabBarController", bundle: .main)
-//        let tbc = storyboard.instantiateInitialViewController()
-//        tbc?.modalPresentationStyle = .fullScreen
-//        self.present(tbc!, animated: true, completion: nil)
 
         let tbc = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
         tbc.selectedIndex = 0

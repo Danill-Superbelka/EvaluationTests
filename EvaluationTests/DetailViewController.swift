@@ -7,17 +7,18 @@
 
 import UIKit
 
-class CollectionCell: UITableViewCell {
-    
-}
+//MARK: Контроллер отображения Деталей альбома
+
 
 class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var tableView: UITableView!
+    
     let cellReuseIdentifier = "cell"
     var album: AlbumInfo.Album?
     var songsList = [SongsModel.Song]()
-
+    
+// Интерфейс storyboard
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var albumName: UILabel!
     @IBOutlet var artist: UILabel!
     @IBOutlet var genar: UILabel!
@@ -41,10 +42,9 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         
         guard let url = album?.artworkUrl100 else {return}
         setImage(stringURL: url)
-        
-        // Do any additional setup after loading the view.
     }
     
+// форматирование отображения даты релиза альбома
     private func setDate(date: String) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
@@ -56,7 +56,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         let date = formatDate.string(from: backDate)
         return date
     }
-    
+// получение картинки альбома
     private func setImage(stringURL: String?){
         if let url = stringURL {
             APIService.shared.getJSON(stringURL: url) { [weak self] result in
@@ -73,7 +73,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             image.image = nil
         }
     }
-    
+// получение песен альбома
     private func setSongs(album: AlbumInfo.Album?) {
         guard let album = album else {return}
         let idAlbum = album.collectionId
@@ -90,7 +90,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    
+//MARK: TableView Configuration
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         songsList.count
     }

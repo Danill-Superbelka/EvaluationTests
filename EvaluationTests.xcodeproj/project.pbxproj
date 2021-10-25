@@ -18,7 +18,6 @@
 		A5DD069C2722E52100C421F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5DD069B2722E52100C421F3 /* Assets.xcassets */; };
 		A5DD069F2722E52100C421F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5DD069D2722E52100C421F3 /* LaunchScreen.storyboard */; };
 		A5DD06A727244ADD00C421F3 /* AlbumInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06A627244ADC00C421F3 /* AlbumInfoModel.swift */; };
-		A5DD06AD27246B2000C421F3 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06AC27246B1F00C421F3 /* AlbumCell.swift */; };
 		A5DD06B327249B9B00C421F3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06B227249B9B00C421F3 /* APIService.swift */; };
 		A5DD06B52724A0D700C421F3 /* DecodingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DD06B42724A0D700C421F3 /* DecodingData.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		A5DD069E2722E52100C421F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5DD06A02722E52100C421F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5DD06A627244ADC00C421F3 /* AlbumInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoModel.swift; sourceTree = "<group>"; };
-		A5DD06AC27246B1F00C421F3 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		A5DD06B227249B9B00C421F3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A5DD06B42724A0D700C421F3 /* DecodingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodingData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,7 +81,6 @@
 				A55E09432726B373009FC204 /* AlbumViewController.swift */,
 				A53F59A22725A6F000B56D1F /* HistoryViewController.swift */,
 				A53F599E2725852E00B56D1F /* DetailViewController.swift */,
-				A5DD06AC27246B1F00C421F3 /* AlbumCell.swift */,
 				A5DD069B2722E52100C421F3 /* Assets.xcassets */,
 				A5DD069D2722E52100C421F3 /* LaunchScreen.storyboard */,
 				A5DD06A02722E52100C421F3 /* Info.plist */,
@@ -171,7 +168,6 @@
 				A5DD06B52724A0D700C421F3 /* DecodingData.swift in Sources */,
 				A53F59A12725943700B56D1F /* SongsModel.swift in Sources */,
 				A5DD06952722E51800C421F3 /* SceneDelegate.swift in Sources */,
-				A5DD06AD27246B2000C421F3 /* AlbumCell.swift in Sources */,
 				A53F599F2725852E00B56D1F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
