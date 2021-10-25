@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+//MARK: Cell View Controller
 class AlbumCell: UITableViewCell {
     
     @IBOutlet var albumImage: UIImageView!
@@ -37,32 +39,33 @@ class AlbumCell: UITableViewCell {
         albumTrackCount.text = String(album.trackCount)
     }
     
-    func emptyCell(){
-        albumImage.image = UIImage(systemName: "face.smiling")
-        albumName.text = "Ничего не найдено"
-//        albumTrackCount = nil
-//        artist = nil
-    }
+   
 }
 
+//MARK: View Controller configuration
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UITabBarControllerDelegate {
     
     @IBOutlet var albumTableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     
+ 
     var albums = [AlbumInfo.Album]()
     var timer: Timer?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController?.delegate = self
         self.albumTableView.delegate = self
         self.albumTableView.dataSource = self
-//        self.albumTableView.estimatedRowHeight = 100.0
-        
-        getAlbum(albumName: "SenseOfHuman")
+        self.albumTableView.keyboardDismissMode = .onDrag
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let album = "\(Search.shared.search)"
+        getAlbum(albumName: album)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -71,13 +74,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if text != "" {
             timer?.invalidate()
             timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { [weak self]_ in
+                History.shared.searchHistory.append(text!)
                 self?.getAlbum(albumName: text!)
-
+                UserDefaults.standard.set(History.shared.searchHistory, forKey: "searchHistory")
+                
             })
         }
     }
     
-    private func getAlbum(albumName: String){
+     func getAlbum(albumName: String){
+         print("поиск альбома \(albumName)")
+
         let stringURL = "https://itunes.apple.com/search?term=\(albumName)&entity=album&attribute=albumTerm"
         
         DecodingData.shared.decodingAlbum(stringURL: stringURL) { [weak self] albumModel, error in
@@ -97,26 +104,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //MARK: - Table View Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if albums.count != 0 {
-            return albums.count
-        } else { return 1}
+         albums.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = albumTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AlbumCell
-        
-        if albums.count != 0 {
             let album = albums[indexPath.row]
             cell.configurateCell(album: album)
-        } else {
-            cell.emptyCell()
-        }
-        return cell
-
+            return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            let album = albums[indexPath.row]
+            detailVC.album = album
             navigationController?.pushViewController(detailVC, animated: true)
         }
     }

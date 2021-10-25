@@ -29,4 +29,24 @@ class DecodingData {
             
         }
     }
+    
+    func decodingSongs(stringURL: String, response: @escaping(SongsModel?, Error?) -> Void) {
+        APIService.shared.getJSON(stringURL: stringURL){ result in
+            
+            switch result {
+            case .success(let data):
+                do {
+                    let songs = try JSONDecoder().decode(SongsModel.self, from: data)
+                    response(songs, nil)
+                } catch let jsonError {
+                    print("Ошибка декодирования \(jsonError)")
+                    
+                }
+            case .failure(let error):
+                print("Ошибка декодирования данных \(error.localizedDescription)")
+                response(nil, error)
+            }
+            
+        }
+    }
 }
