@@ -96,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swd-tL-pHv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="345.87706146926541"/>
+            <point key="canvasLocation" x="1330" y="-414"/>
         </scene>
         <!--История-->
         <scene sceneID="enU-Zd-atN">
@@ -129,93 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LxH-c2-mAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3184.8000000000002" y="345.87706146926541"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="y7Y-7Y-G2u">
-            <objects>
-                <viewController storyboardIdentifier="ViewController" id="7jT-5a-Pfc" customClass="ViewController" customModule="EvaluationTests" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="asc-iL-2f2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ID9-YR-QO3">
-                                <rect key="frame" x="0.0" y="160" width="375" height="458"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="502" id="fvV-WX-Vng"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="wru-2q-MlL" customClass="AlbumCell" customModule="EvaluationTests" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="375" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wru-2q-MlL" id="8QK-pA-51I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="face.smiling" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yiX-nE-TLt">
-                                                    <rect key="frame" x="16" y="11" width="59" height="59"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Название альбома" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6G-oO-jE4">
-                                                    <rect key="frame" x="83" y="11" width="165" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Исполнитель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-YP-La5">
-                                                    <rect key="frame" x="83" y="40" width="128" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Q3-rj-8qw">
-                                                    <rect key="frame" x="338" y="60" width="21" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="albumImage" destination="yiX-nE-TLt" id="xg3-7U-dxs"/>
-                                            <outlet property="albumName" destination="g6G-oO-jE4" id="Nyo-Ux-9kz"/>
-                                            <outlet property="albumTrackCount" destination="4Q3-rj-8qw" id="jk7-wt-oFh"/>
-                                            <outlet property="artist" destination="eNh-YP-La5" id="Oda-Rg-gDc"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGh-LS-dzt">
-                                <rect key="frame" x="0.0" y="43" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="7jT-5a-Pfc" id="MT5-II-J5x"/>
-                                </connections>
-                            </searchBar>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="woK-qC-fvh"/>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="ID9-YR-QO3" firstAttribute="leading" secondItem="asc-iL-2f2" secondAttribute="leading" id="QKc-TS-hd7"/>
-                            <constraint firstItem="ID9-YR-QO3" firstAttribute="bottom" secondItem="woK-qC-fvh" secondAttribute="bottom" id="TGU-2e-ai5"/>
-                            <constraint firstItem="ID9-YR-QO3" firstAttribute="top" secondItem="woK-qC-fvh" secondAttribute="top" constant="116" id="gzb-ba-MQG"/>
-                            <constraint firstAttribute="trailing" secondItem="ID9-YR-QO3" secondAttribute="trailing" id="sUX-fM-ndV"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="xd7-Ie-Pr2"/>
-                    <connections>
-                        <outlet property="albumTableView" destination="ID9-YR-QO3" id="pTV-7E-yMc"/>
-                        <outlet property="searchBar" destination="bGh-LS-dzt" id="SDp-u1-nUr"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HO0-i0-iW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1431.2" y="-374.66266866566718"/>
+            <point key="canvasLocation" x="950" y="414"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ol3-ML-7mp">
@@ -307,39 +221,19 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fVM-s7-6Hm" kind="relationship" relationship="viewControllers" destinationCreationSelector="view" id="AZh-6Z-vNG"/>
-                        <segue destination="Izt-ga-cw5" kind="relationship" relationship="viewControllers" destinationCreationSelector="history" id="FqJ-E7-F8X"/>
                         <segue destination="G2m-gA-LQy" kind="relationship" relationship="viewControllers" id="X7S-6D-op9"/>
+                        <segue destination="Izt-ga-cw5" kind="relationship" relationship="viewControllers" destinationCreationSelector="history" id="FqJ-E7-F8X"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChH-4B-rjW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-395" y="-70"/>
         </scene>
-        <!--Поиск-->
-        <scene sceneID="PyH-ow-OYq">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fVM-s7-6Hm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Поиск" image="magnifyingglass" catalog="system" id="xVh-GK-19x"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A6c-Fy-SiS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7jT-5a-Pfc" kind="relationship" relationship="rootViewController" id="9Dk-n0-Jck"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dBA-4V-Ny9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="492" y="-374.66266866566718"/>
-        </scene>
         <!--Item-->
         <scene sceneID="lS9-LO-t82">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G2m-gA-LQy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="CE0-sZ-U23"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="magnifyingglass" catalog="system" id="CE0-sZ-U23"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OaC-2F-aua">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -352,11 +246,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e1b-Ic-3ns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="345.87706146926541"/>
+            <point key="canvasLocation" x="473" y="-414"/>
         </scene>
     </scenes>
     <resources>
-        <image name="face.smiling" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <systemColor name="secondarySystemBackgroundColor">
