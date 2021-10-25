@@ -10,10 +10,12 @@ UI Description:
  - UITabBarController with two tabs (Search, History)
  - Tab with UISearchBar for start and stop searching
  - UICollectionView with albums
- - after selecting an album, you need to display a screen with full information about the album and list of songs (in both tabs - Search and History)
+ - after selecting an album, you need to display a screen with full information about the album and list of songs (in both tabs - Search and History)
  
  - Tab with search history
  - UITableView with history from UISearchBar input text. This history should be saved between application launch
  - after selecting search string, you need to display a screen with search resul
+
+
  
  
