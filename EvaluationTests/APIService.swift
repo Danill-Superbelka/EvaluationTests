@@ -17,7 +17,7 @@ class APIService {
     }
     
     public func getJSON(stringURL: String, completion: @escaping(Result<Data, ApiError>) -> Void ) {
-        
+    
         guard let url = URL(string: stringURL) else {
             print("Ошибка получения URL")
             completion(.failure(.error(NSLocalizedString("Error: Invalid URL", comment: " "))))
@@ -31,7 +31,6 @@ class APIService {
                     completion(.failure(.error("Error: Invalide URL Session")))
                     return
                 }
-                
                 guard let data = data else {
                     print("Ошибка получения данных")
                     return

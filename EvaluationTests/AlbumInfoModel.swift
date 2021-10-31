@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AlbumInfo: Codable {
+struct Album: Codable {
     struct Album: Codable {
         let artistName: String
         let collectionName: String //Название альбома
@@ -24,4 +24,5 @@ struct AlbumInfo: Codable {
     let resultCount: Int
     let results:[Album]
 }
+
 

@@ -13,6 +13,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+//        if let tabBarController = window?.rootViewController as? UITabBarController {
+//            print("root VC")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let albumView = storyboard.instantiateViewController(withIdentifier: "AlbumView")
+//            let historyView = storyboard.instantiateViewController(withIdentifier: "HistoryView")
+//
+//            albumView.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 8)
+//            historyView.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 6)
+//
+//            tabBarController.viewControllers = [albumView, historyView]
+//        }
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
