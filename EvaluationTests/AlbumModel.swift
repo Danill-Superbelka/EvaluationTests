@@ -30,11 +30,9 @@ class AlbumViewModel: NSObject {
         self.api.decodingAlbum(stringURL:stringURL ) { [weak self] albumModel, error in
             if error == nil {
                 guard let albumModel = albumModel else {return}
-                
                 let sorted = albumModel.results.sorted{ first, second in
                     return first.collectionName.compare(second.collectionName) == ComparisonResult.orderedAscending
                 }
-                
                 self?.albums = sorted
             }
         }

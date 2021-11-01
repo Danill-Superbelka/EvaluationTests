@@ -36,10 +36,7 @@ class APIService {
                     return
                 }
                 completion(.success(data))
-                
             }
         }.resume()
-        
-        
     }
 }

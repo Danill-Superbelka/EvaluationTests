@@ -22,13 +22,11 @@ class DecodingData {
                     response(decodingData, nil)
                 } catch let jsonError {
                     print("Ошибка декодирования \(jsonError)")
-                    
                 }
             case .failure(let error):
                 print("Ошибка декодирования данных \(error.localizedDescription)")
                 response(nil, error)
             }
-            
         }
     }
     
@@ -42,13 +40,11 @@ class DecodingData {
                     response(songs, nil)
                 } catch let jsonError {
                     print("Ошибка декодирования \(jsonError)")
-
                 }
             case .failure(let error):
                 print("Ошибка декодирования данных \(error.localizedDescription)")
                 response(nil, error)
             }
-
         }
     }
 }

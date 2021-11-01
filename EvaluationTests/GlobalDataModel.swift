@@ -9,21 +9,13 @@ import Foundation
 import UIKit
 
 
-class History{
-    static let shared = History()
-    var searchHistory = [String]()
-}
-
-class Search{
-    static let shared = Search()
-    var search: String = String()
-}
-
+// строка запроса получения информации об альбоме
 class StringURL{
     static let shared = StringURL()
     var stringURL: String = String()
 }
 
+// строка запроса получения списка песен
 class AlbumSongsURL{
     static let shared = AlbumSongsURL()
     var stringURL: String = String()

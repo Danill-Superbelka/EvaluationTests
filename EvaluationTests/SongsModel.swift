@@ -8,9 +8,10 @@
 import Foundation
 
 struct Songs: Decodable {
+    struct Song: Decodable {
+        let trackName: String?
+    }
     let results: [Song]
 }
 
-struct Song: Decodable {
-    let trackName: String?
-}
+

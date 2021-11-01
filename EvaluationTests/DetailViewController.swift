@@ -17,16 +17,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var genre: UILabel!
     @IBOutlet var songsNumber: UILabel!
     @IBOutlet var date: UILabel!
+    @IBOutlet var copyright: UILabel!
     
     @IBOutlet var tableView: UITableView!
     
     private var detailViewModel: DetailViewModel?
     
     var album: Album.Album?
-    var songsAlbum = [Song]()
+    var songsAlbum = [Songs.Song]()
     
     let data = [1,2,3,4,5,6]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AlbumSongsURL.shared.stringURL = "\(album?.collectionId ?? 0)"
@@ -38,7 +39,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.detailViewModel = DetailViewModel()
         self.detailViewModel!.bindDetailViewModel = {
             self.songsAlbum = self.detailViewModel!.songs
-            print("Песни с деталей ",self.songsAlbum)
             self.tableView.reloadData()
         }
     }
@@ -52,20 +52,21 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         genre.text = album?.primaryGenreName ?? "Error"
         songsNumber.text = "\(album?.trackCount ?? 0)"
         date.text = setDate(date: album?.releaseDate ?? "Error")
+        copyright.text = album?.copyright
     }
     
-    // форматирование отображения даты релиза альбома
-        private func setDate(date: String) -> String{
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
-
-            guard let backDate = dateFormatter.date(from: date) else {return ""}
-
-            let formatDate = DateFormatter()
-            formatDate.dateFormat = "dd-MM-yyyy"
-            let date = formatDate.string(from: backDate)
-            return date
-        }
+// форматирование отображения даты релиза альбома
+    private func setDate(date: String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZ"
+        
+        guard let backDate = dateFormatter.date(from: date) else {return ""}
+        
+        let formatDate = DateFormatter()
+        formatDate.dateFormat = "dd-MM-yyyy"
+        let date = formatDate.string(from: backDate)
+        return date
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         songsAlbum.count

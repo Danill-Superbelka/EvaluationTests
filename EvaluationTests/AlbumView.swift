@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-class AlbumViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
+class AlbumView: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
    
 
     @IBOutlet var collectionView: UICollectionView!
@@ -43,6 +43,8 @@ class AlbumViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
     }
     
+    
+//MARK: Конфигурация CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         albumViewModel?.albums.count ?? 0
     }
@@ -66,7 +68,7 @@ class AlbumViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
 }
 
-
+//MARK: Конфигурация ячеек
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var albumImage: UIImageView!

@@ -12,7 +12,7 @@ class DetailViewModel: NSObject {
     
     var bindDetailViewModel : (() -> ()) = {}
     
-    private(set) var songs: [Song]! {
+    private(set) var songs: [Songs.Song]! {
         didSet {
             self.bindDetailViewModel()
         }
