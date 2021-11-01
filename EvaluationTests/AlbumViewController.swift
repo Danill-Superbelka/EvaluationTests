@@ -6,38 +6,63 @@
 //
 
 import UIKit
+import Nuke
 
 class AlbumViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate{
    
-    private var albumModel: AlbumModel!
-    
+
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var searchBar: UISearchBar!
-    let data = [1,2,3,4,5,6,7]
     
-
+    private var albumViewModel: AlbumViewModel?
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.keyboardDismissMode = .onDrag
-        
+    }
+    
+    func callToViewModelForUIUpdate(){
+        self.albumViewModel = AlbumViewModel()
+        self.albumViewModel!.bindAlbumViewModel = {
+            self.collectionView.reloadData()
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
+        let text = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        if text != ""{
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: {[weak self]_ in
+                StringURL.shared.stringURL = text ?? " "
+                self!.callToViewModelForUIUpdate()
+            })
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data.count
+        albumViewModel?.albums.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let album = albumViewModel?.albums[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        cell.backgroundColor = .red
+        cell.configurateCell(album: album!)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let album = albumViewModel?.albums[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let detailVc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailVc.album = album
+        
+        self.present(detailVc,animated: true)
+        
     }
 }
 
@@ -47,7 +72,10 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet var albumImage: UIImageView!
     @IBOutlet var albumName: UILabel!
     
-//    func displayContent(title: String){
-//        albumName.text = title
-//    }
+    func configurateCell(album: Album.Album){
+        if let  stringURL = URL(string:album.artworkUrl100 ?? " "){
+            Nuke.loadImage(with: stringURL, into: albumImage)
+        } else { albumImage.image = UIImage(systemName: "music.note.list")}
+        albumName.text = album.collectionName
+    }
 }

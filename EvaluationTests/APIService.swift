@@ -16,7 +16,7 @@ class APIService {
         case error(_ errorString: String)
     }
     
-    public func getJSON(stringURL: String, completion: @escaping(Result<Data, ApiError>) -> Void ) {
+    public func getData(stringURL: String, completion: @escaping(Result<Data, ApiError>) -> Void ) {
     
         guard let url = URL(string: stringURL) else {
             print("Ошибка получения URL")

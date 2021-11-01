@@ -8,12 +8,6 @@
 import Foundation
 
 
-class History{
-    static let shared = History()
-    var searchHistory = [String]()
-}
 
-class Search{
-    static let shared = Search()
-    var search: String = String()
-}
+
+

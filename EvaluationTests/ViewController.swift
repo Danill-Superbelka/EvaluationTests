@@ -23,7 +23,4 @@ class ViewController: UITabBarController {
         viewControllers = [album, historyView]
         
     }
-    
-
-
 }
