@@ -1,21 +1,17 @@
 # EvaluationTests
 Evaluation Test from Fora Soft
 
-Постановка задачи. 
+В тестовом задании нужно разработать простое приложение для iPhone. Приложение
+должно отображать обложки альбомов из iTunes API, и пользователь должен иметь
+возможность видеть подробную информацию о выбранном альбоме.
 
-In the test task, you need to develop a simple application for the iPhone. The application should display album artwork from the iTunes API, and the user should be able to see detailed information about the selected album.
-Also, search history needs to be saved and user can see the search history on the second tab, after tapping on the search string search result should be opened.
-
-UI Description:
- - UITabBarController with two tabs (Search, History)
- - Tab with UISearchBar for start and stop searching
- - UICollectionView with albums
- - after selecting an album, you need to display a screen with full information about the album and list of songs (in both tabs - Search and History)
- 
- - Tab with search history
- - UITableView with history from UISearchBar input text. This history should be saved between application launch
- - after selecting search string, you need to display a screen with search resul
+Реализовать:
+- UISearchBar для поиска альбомов по названию
+- UICollectionView с альбомами
+- при тапе на любой альбом из collection view вывести экран альбома детально (с полной информацией об альбоме и списком песен)
+- кэширование изображений
+- дизайн на ваше усмотрение
 
 
- 
- 
+ ![Simulator Screen Shot - iPhone 12 - 2021-11-02 at 12 05 38](https://user-images.githubusercontent.com/51852490/139823368-51bec508-52f0-4aad-9b94-e828bd182b19.png) ![Simulator Screen Shot - iPhone 12 - 2021-11-02 at 12 05 00](https://user-images.githubusercontent.com/51852490/139823825-b2871552-e192-4710-846f-ec1e1f00b908.png) ![Simulator Screen Shot - iPhone 12 - 2021-11-02 at 12 11 06](https://user-images.githubusercontent.com/51852490/139823684-2b9303e1-b5f0-49ec-b679-c4fc23f233e6.png)
+
