@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct SongsModel: Decodable {
+struct Songs: Decodable {
     struct Song: Decodable {
         let trackName: String?
     }
     let results: [Song]
 }
+
+
